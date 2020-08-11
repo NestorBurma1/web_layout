@@ -29,7 +29,7 @@ class _State extends State<TextUpButton> {
       },
       child: Container(
         height: 100,
-        width: 180,
+        width: 120,
         child: Column(
           children: [
             Text(widget.text,
