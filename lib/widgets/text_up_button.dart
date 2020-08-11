@@ -38,7 +38,7 @@ class _State extends State<TextUpButton> {
                     : GoogleFonts.ubuntu().fontWeight),
             Visibility(
               visible: buttonUpFlag,
-              child: Divider(
+              child: const Divider(
                 color: Colors.red,
                 height: 2.0,
               ),

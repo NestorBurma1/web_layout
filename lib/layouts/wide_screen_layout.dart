@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:web_layout/widgets/text_up_button.dart';
+import 'package:web_layout/widgets/upside_row_with_circular_avatar.dart';
 
 class WideScreenLayout extends StatefulWidget {
-  WideScreenLayout({Key key, this.title}) : super(key: key);
+  const WideScreenLayout({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -14,6 +15,7 @@ class WideScreenLayout extends StatefulWidget {
 
 class _WideScreenLayoutState extends State<WideScreenLayout> {
   bool buttonUpFlag = false;
+  String dropdownValue = '';
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +25,18 @@ class _WideScreenLayoutState extends State<WideScreenLayout> {
           Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height / 3,
-            color: Color(0xFFDAF0FF),
+            color: const Color(0xFFDAF0FF),
           ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Align(
-                    alignment: Alignment.topLeft,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    flex: 1,
                     child: Container(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Row(
                         children: [
                           Image.asset('images/logo_wide_screen.jpg'),
@@ -46,15 +48,12 @@ class _WideScreenLayoutState extends State<WideScreenLayout> {
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Align(
-                    alignment: Alignment.topCenter,
+                  Expanded(
+                    flex: 2,
                     child: Container(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Row(
-                        children: [
+                        children: const [
                           TextUpButton(text: 'Home'),
                           TextUpButton(text: 'Meet Your Team'),
                           TextUpButton(text: 'Goals'),
@@ -62,24 +61,29 @@ class _WideScreenLayoutState extends State<WideScreenLayout> {
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                              child: Image.asset('images/users_photo/2.jpg')),
-                          Text('Sarah Andersen')
-                        ],
-                      ),
+                  Expanded(
+                    flex: 1,
+                    child: UpSideRowWithCircularAvatar(),
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 150.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Hi Sarah',
+                      style: TextStyle(fontSize: 30.0),
                     ),
-                  ),
+                    Text(
+                      'Welcome back! What can we help you with today&',
+                      style: TextStyle(fontSize: 15.0),
+                    )
+                  ],
                 ),
-              ],
-            ),
+              )
+            ],
           ),
         ],
       ),
