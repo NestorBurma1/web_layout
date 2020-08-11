@@ -77,7 +77,7 @@ class _WideScreenLayoutState extends State<WideScreenLayout> {
                       style: TextStyle(fontSize: 30.0),
                     ),
                     Text(
-                      'Welcome back! What can we help you with today&',
+                      'Welcome back! What can we help you with today?',
                       style: TextStyle(fontSize: 15.0),
                     )
                   ],

@@ -18,7 +18,7 @@ class _State extends State<UpSideRowWithCircularAvatar> {
         ),
         const Text('Sarah Andersen'),
         DropdownButton<String>(
-            icon: const Icon(Icons.keyboard_arrow_down),
+            icon: const Icon(Icons.arrow_drop_down),
             items: <String>['String 1', 'String 2']
                 .map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
